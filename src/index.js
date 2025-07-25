@@ -1,6 +1,5 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import cors from 'cors';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { PrismaClient } from '@prisma/client';
@@ -197,7 +196,7 @@ app.post('/products', verifyToken, async (req, res) => {
     res.status(201).json({
       message: 'Product added successfully',
       product: newProduct,
-      product_id: newProduct.id // Add this for test_api.py
+      product_id: newProduct.id 
     });
   } catch (err) {
     console.error('Error adding product:', err);
@@ -320,7 +319,7 @@ const swaggerOptions = {
         url: 'http://localhost:8080',
       },
     ],
-    components: { // ✅ MOVE IT HERE
+    components: { 
       securitySchemes: {
         bearerAuth: {
           type: 'http',

@@ -82,6 +82,49 @@ npm run dev
 | PUT    | `/products/:id/quantity`     | Update product quantity      | ✅   |
 
 ---
+# 🧪 Testing the API 
+
+This project comes with an optional Python script (`api_test.py`) to test the core API functionality using the `requests` library.
+
+## ✅ Prerequisites
+
+Make sure you have Python installed. Then install the required package:
+
+```
+pip install requests
+```
+
+## 📂 File Structure
+
+```
+ims-backend/
+├── src/
+├── tests/
+│   └── api_test.py
+```
+
+## 🔁 What it Tests
+
+- User Registration (`/register`)
+- Login (`/login`)
+- Product Creation (`/products`)
+- Product Quantity Update (`/products/:id/quantity`)
+- Get All Products (`/products`)
+
+## 🚀 How to Run
+
+From the `tests/` directory, run:
+
+```
+python api_test.py
+```
+
+This will execute all test cases in sequence. If any test fails, remaining tests will be skipped.
+
+## 💡 Notes
+
+- You may update `BASE_URL` in the script to match your backend host (e.g., `http://localhost:8080`).
+- Token-based authentication is automatically handled once login succeeds.
 
 ## 📄 API Documentation (Swagger)
 
