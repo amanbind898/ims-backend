@@ -134,3 +134,9 @@ Import the following JSON file into Postman:
 ```
 File: inventory-api.postman_collection.json
 ```
+## ✅ AI Disclosure
+AI Tools Used:
+
+-ChatGPT used to generate boilerplate for Express, Prisma schema, and Swagger docs
+
+
