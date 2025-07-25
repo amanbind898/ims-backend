@@ -24,12 +24,14 @@ This is a backend API for managing users and product inventory. It supports:
 ## 📁 Project Structure
 
 ```
-src/
-├── index.js              # Main API entry point
-├── middlewares/
-│   └── auth.middleware.js
+├──src/
+  └──index.js              # Main API entry point
+  └── middlewares/
+       └── auth.middleware.js
 ├── prisma/
 │   └── schema.prisma
+├── tests/
+│   └── api_test.py
 .env                      # Environment variables
 ```
 
@@ -94,14 +96,7 @@ Make sure you have Python installed. Then install the required package:
 pip install requests
 ```
 
-## 📂 File Structure
 
-```
-ims-backend/
-├── src/
-├── tests/
-│   └── api_test.py
-```
 
 ## 🔁 What it Tests
 
