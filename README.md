@@ -1,26 +1,29 @@
+# 🛒 Fi Money Inventory Management System
 
-# 📦 Inventory Management System API
+This is a simple inventory backend project built for Fi Money's backend assignment.
 
-This is a backend API for managing users and product inventory. It supports:
+## 🔧 Tech Stack
 
-- User registration and login (with JWT)
-- Protected product CRUD APIs
-- Swagger UI Documentation
-- Prisma + PostgreSQL
-
----
-
-## 🚀 Tech Stack
-
-- Node.js (ESM)
-- Express.js
-- Prisma ORM
-- PostgreSQL
-- JWT Authentication
-- Swagger (OpenAPI Docs)
+- Node.js with Express
+- Prisma ORM with PostgreSQL
+- JSON Web Tokens for authentication
+- Swagger (OpenAPI) for API Documentation
+- HTML + Vanilla JS frontend
 
 ---
 
+## 📦 Features
+
+- User Registration & Login
+- JWT Authentication (Bearer Token)
+- Add Product (with image, type, SKU, price, quantity)
+- Update Product Quantity
+- View Paginated Products List
+- Basic frontend with HTML
+- Swagger UI for API Documentation
+- Postman Collection for Testing
+
+---
 ## 📁 Project Structure
 
 ```
@@ -35,41 +38,44 @@ This is a backend API for managing users and product inventory. It supports:
 .env                      # Environment variables
 ```
 
----
+## 🚀 Getting Started
 
-## ⚙️ Environment Variables (`.env`)
-
-```
-PORT=8080
-DATABASE_URL=postgresql://<user>:<password>@localhost:5432/<your_db>
-JWT_SECRET=your-secret-key
-```
-
----
-
-## 📦 Setup & Run
+### 1. Clone the Repository
 
 ```bash
-# 1. Install dependencies
-npm install
-
-# 2. Prisma setup
-npx prisma generate
-npx prisma migrate dev --name init
-
-# 3. Start the server
-npm run dev
+git clone https://github.com/your-username/ims-backend.git
+cd ims-backend
 ```
 
-> Swagger Docs: http://localhost:8080/api-docs
+### 2. Install Dependencies
 
----
+```bash
+npm install
+```
 
-## 🔐 JWT Auth Flow
+### 3. Set up `.env`
 
-- Register via `POST /register`
-- Login via `POST /login` → Get JWT token
-- Use `Bearer <token>` in headers for protected routes
+Create a `.env` file in the root with:
+
+```env
+DATABASE_URL="xxxxxxxxxxxxxxx"
+JWT_SECRET=your_secret_key
+```
+
+### 4. Set up Prisma
+
+```bash
+npx prisma generate
+npx prisma migrate dev --name init
+```
+
+### 5. Start the Server
+
+```bash
+npm start
+```
+
+API will run on `http://localhost:8080`
 
 ---
 
@@ -84,59 +90,47 @@ npm run dev
 | PUT    | `/products/:id/quantity`     | Update product quantity      | ✅   |
 
 ---
-# 🧪 Testing the API 
+## 🧪 Testing
 
-This project comes with an optional Python script (`api_test.py`) to test the core API functionality using the `requests` library.
+- Run the included test script:
 
-## ✅ Prerequisites
-
-Make sure you have Python installed. Then install the required package:
-
-```
-pip install requests
+```bash
+cd tests
+python test_api.py
 ```
 
-
-
-## 🔁 What it Tests
-
-- User Registration (`/register`)
-- Login (`/login`)
-- Product Creation (`/products`)
-- Product Quantity Update (`/products/:id/quantity`)
-- Get All Products (`/products`)
-
-## 🚀 How to Run
-
-From the `tests/` directory, run:
-
-```
-python api_test.py
-```
-
-This will execute all test cases in sequence. If any test fails, remaining tests will be skipped.
-
-## 💡 Notes
-
-- You may update `BASE_URL` in the script to match your backend host (e.g., `http://localhost:8080`).
-- Token-based authentication is automatically handled once login succeeds.
-
-## 📄 API Documentation (Swagger)
-
-- Visit: [http://localhost:8080/api-docs](http://localhost:8080/api-docs)
+> Make sure your server is running and `requests` is installed (`pip install requests`).
 
 ---
 
-## 📬 Postman Collection
+## 🌐 Swagger API Docs
 
-Import the following JSON file into Postman:
+Visit: [http://localhost:8080/api-docs](http://localhost:8080/api-docs)
 
-```
-File: inventory-api.postman_collection.json
-```
-## ✅ AI Disclosure
-AI Tools Used:
+- Full OpenAPI 3.0 support
+- Includes login, register, add product, update quantity, get products
 
--ChatGPT used to generate boilerplate for Express, Prisma schema, and Swagger docs
+---
 
+## 🖥️ Frontend 
 
+Open the provided `index.html` file in the browser:
+
+- Register/Login
+- Add Products
+- View Products
+- Update Quantity
+
+---
+
+## 🧠 AI Usage Disclosure
+
+I used ChatGPT to assist in generating Swagger documentation, and writing the HTML frontend. I reviewed and tested everything manually.
+
+---
+
+---
+
+## 👨‍💻 Author
+
+**Aman Kumar Bind** – [CSE '26 @ IIIT Bhagalpur](https://github.com/amanbind898)
