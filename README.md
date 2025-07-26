@@ -39,7 +39,7 @@ This is a simple inventory backend project built for Fi Money's backend assignme
 ```
 
 ## 🚀 Getting Started
-
+ #### Backend :
 ### 1. Clone the Repository
 
 ```bash
@@ -77,6 +77,14 @@ npm start
 
 API will run on `http://localhost:8080`
 
+### 🖥️ Frontend :
+
+Open the provided `index.html` file in the browser:
+
+- Register/Login
+- Add Products
+- View Products
+- Update Quantity
 ---
 
 ## 🔁 API Routes Summary
