@@ -4,16 +4,19 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { PrismaClient } from '@prisma/client';
 import { verifyToken } from './middlewares/auth.middleware.js';
-
+import cors from 'cors';
 const prisma = new PrismaClient();
+
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 const port = process.env.PORT || 8080;
 
 app.use(express.json());
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   res.send('Inventory Management API is running.');
