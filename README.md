@@ -27,6 +27,8 @@ This is a simple inventory backend project built for Fi Money's backend assignme
 ## 📁 Project Structure
 
 ```
+├──Public/
+  └──index.html            #Basic HTML Frontend
 ├──src/
   └──index.js              # Main API entry point
   └── middlewares/
