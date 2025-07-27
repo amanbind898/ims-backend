@@ -38,6 +38,27 @@ This is a simple inventory backend project built for Fi Money's backend assignme
 .env                      # Environment variables
 ```
 
+## 📂 Database Schema (Prisma)
+
+```
+model User {
+  id       Int     @id @default(autoincrement())
+  username String  @unique
+  password String
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  name        String
+  type        String
+  sku         String  @unique
+  image_url   String   
+  description String
+  quantity    Int
+  price       Float
+}
+```
+
 ## 🚀 Getting Started
  #### Backend :
 ### 1. Clone the Repository
