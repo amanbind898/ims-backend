@@ -5,10 +5,11 @@ import jwt from 'jsonwebtoken';
 import { PrismaClient } from '@prisma/client';
 import { verifyToken } from './middlewares/auth.middleware.js';
 import cors from 'cors';
+dotenv.config();
 const prisma = new PrismaClient();
 
 
-dotenv.config();
+
 
 const app = express();
 app.use(cors());
