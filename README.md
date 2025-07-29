@@ -153,6 +153,39 @@ Open the provided `index.html` file in the browser:
 - Update Quantity
 
 ---
+🚢 Docker Setup
+===============
+
+🧩 Prerequisites
+----------------
+- Docker Desktop installed
+- `.env` file placed in the root directory (❗ no quotes in values)
+
+🛠️ .env Example (Place in Project Root)
+---------------------------------------
+DATABASE_URL=prisma+postgres://accelerate.prisma-data.net/?api_key=your_actual_api_key_here
+JWT_SECRET=your_jwt_secret_here
+PORT=8080
+
+⚠️ DO NOT wrap values in double quotes `"..."`. Prisma will fail to parse the URL if quotes are used.
+
+📦 Build Docker Image
+---------------------
+docker build -t ims-backend .
+
+▶️ Run Docker Container
+------------------------
+docker run -p 8080:8080 --env-file .env ims-backend
+
+- This starts the API server at http://localhost:8080.
+- Make sure your `PORT` in `.env` is set to `8080` (or update the Dockerfile/EXPOSE accordingly).
+
+✅ Dockerfile Summary
+----------------------
+- Installs dependencies with `npm ci`
+- Uses `npx prisma generate` to create the Prisma client inside the image
+- Runs as a non-root user (`nodejs`)
+- Starts the app with `CMD ["node", "src/index.js"]`
 
 ## 🧠 AI Usage Disclosure
 
