@@ -37,7 +37,8 @@ This is a simple inventory backend project built for Fi Money's backend assignme
 │   └── schema.prisma
 ├── tests/
 │   └── api_test.py
-.env                      # Environment variables
+├── .env                    # Environment variables
+├── Dockerfile              # DockerFile     
 ```
 
 ## 📂 Database Schema (Prisma)
